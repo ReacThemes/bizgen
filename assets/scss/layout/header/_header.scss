@@ -328,8 +328,10 @@
                             cursor: pointer;
 
                             .menu-toggle {
-                                width: 20px;
-                                height: 100%;
+                                padding: 0 20px;
+                                width: 60px;
+                                height: 60px;
+                                line-height: 60px;
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: center;
@@ -433,6 +435,7 @@
                 a {
                     color: var(--color-white);
                     font-weight: var(--f-semi-bold);
+
                     i {
                         margin-right: 5px
                     }
@@ -558,11 +561,11 @@
         @include flex-center;
         justify-content: space-between;
 
-        @include mq(max-xxxl){
+        @include mq(max-xxxl) {
             padding: 0 60px;
         }
 
-        @include mq(max-xxl){
+        @include mq(max-xxl) {
             padding: 0 40px;
         }
 
@@ -692,11 +695,11 @@
         @include flex-center;
         justify-content: space-between;
 
-        @include mq(max-xxxl){
+        @include mq(max-xxxl) {
             padding: 0 60px;
         }
 
-        @include mq(max-xxl){
+        @include mq(max-xxl) {
             padding: 0 40px;
         }
 
@@ -713,7 +716,7 @@
         }
 
         .logo {
-            @include mq(max-xxl){
+            @include mq(max-xxl) {
                 max-width: 150px;
             }
         }
@@ -724,7 +727,7 @@
             justify-content: space-between;
             gap: 50px;
 
-            @include mq(max-xxl){
+            @include mq(max-xxl) {
                 gap: 20px;
             }
 
@@ -734,6 +737,7 @@
                         @include mq(max-xxl) {
                             margin-right: 20px;
                         }
+
                         a {
                             color: var(--color-heading);
                             padding: 30px 0;

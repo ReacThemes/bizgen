@@ -8853,8 +8853,10 @@ button {
   cursor: pointer;
 }
 .rts-header-area.header-two .header-main-area-two .header-main-wrapper .rts-nav-btn-area .rts-btn-area .rts-menu-toggles .menu-toggle {
-  width: 20px;
-  height: 100%;
+  padding: 0 20px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
