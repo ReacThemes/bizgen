@@ -6,7 +6,8 @@
     .header-top-area {
         background: var(--color-primary);
         padding: 10px 0;
-        @include mq(max-md){
+
+        @include mq(max-md) {
             display: none
         }
 
@@ -197,11 +198,24 @@
         .header-top-area {
             padding: 10px 100px;
 
-            @include mq(max-md) {
+            @include mq(max-xxxl) {
+                padding: 10px 30px;
+            }
+
+            @include mq(max-xxl) {
+                padding: 10px 60px;
+            }
+
+            @include mq(max-xl) {
+                padding: 10px 40px;
+            }
+
+            @include mq(max-lg) {
                 display: none;
             }
 
             .header-top-wrapper {
+                flex-direction: row;
                 .info-area {
                     display: flex;
                     align-items: center;
@@ -228,12 +242,26 @@
                 align-items: center;
                 justify-content: space-between;
 
+                @include mq(max-xxxl) {
+                    padding: 0 30px;
+                }
+
+                @include mq(max-xxl) {
+                    padding: 20px 60px;
+                }
+
                 @include mq(max-xl) {
-                    padding: 15px 30px;
+                    padding: 20px 40px;
                 }
 
                 @include mq(max-md) {
                     padding: 15px;
+                }
+
+                .logo {
+                    @include mq(max-xxl){
+                        width: 120px;
+                    }
                 }
 
                 .rts-nav-btn-area {
@@ -244,6 +272,9 @@
                     .rts-nav-area {
                         ul {
                             li {
+                                @include mq(max-xxl){
+                                    margin-right: 20px;
+                                }
                                 a {
                                     color: var(--color-heading);
                                     padding: 35px 0;
@@ -279,6 +310,10 @@
                             color: var(--color-heading);
                             border-radius: 100px;
                             cursor: pointer;
+
+                            @include mq(max-sm){
+                                display: none
+                            }
                         }
 
                         .rts-menu-toggles {

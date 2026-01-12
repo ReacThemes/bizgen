@@ -271,10 +271,21 @@
                     transition: all 0.5s ease;
                     z-index: 3;
 
+                    @include mq(max-xxxl){
+                        padding: 20px;
+                        left: 20px;
+                        right: 20px;
+                        bottom: 20px;
+                    }
+
                     .content {
                         .title {
                             font-size: 30px;
                             margin-bottom: 5px;
+
+                            @include mq(max-lg){
+                                font-size: 20px;
+                            }
                         }
 
                         .ct {
