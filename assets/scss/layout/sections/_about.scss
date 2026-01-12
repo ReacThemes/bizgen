@@ -77,13 +77,15 @@
 
         .rts-section-title {
             .title {
-                @include mq(max-xxl){
+                @include mq(max-xxl) {
                     line-height: 1.2;
+
                     br {
                         display: none;
                     }
                 }
             }
+
             .desc {
                 max-width: 605px;
             }
@@ -172,7 +174,7 @@
                 right: 50px;
                 z-index: 2;
 
-                @include mq(max-lg){
+                @include mq(max-lg) {
                     right: 10px;
                 }
 
@@ -250,13 +252,14 @@
     }
 }
 
-.rts-about-wrapper-three{
+.rts-about-wrapper-three {
     .rts-about-content-area {
         .rts-section-title {
             .title {
                 margin-bottom: 25px
             }
         }
+
         .content-item-wrapper {
             @include flex-center;
             gap: 40px;
@@ -264,16 +267,21 @@
             padding-bottom: 30px;
             margin-top: 35px;
             margin-bottom: 25px;
-            
+
+            @include mq(max-xl){
+                gap: 25px;
+            }
+
             @include mq(max-lg) {
                 flex-wrap: wrap;
             }
-            
+
             .single-item {
                 display: flex;
                 align-items: center;
                 gap: 15px;
-                .icon{
+
+                .icon {
                     @include flex;
                     min-width: 60px;
                     height: 60px;
@@ -284,9 +292,16 @@
                 .title {
                     font-size: 18px;
                     line-height: 26px;
+
+                    @include mq(max-xl) {
+                        font-size: 16px;
+                        line-height: 22px;
+
+                    }
                 }
             }
         }
+
         .desc {
             font-size: 18px;
 
@@ -306,10 +321,11 @@
         margin-left: 100px;
         position: relative;
         z-index: 1;
+
         &.inner-about {
             margin-left: 0;
 
-            @include mq(max-lg){
+            @include mq(max-lg) {
                 position: unset;
             }
 
@@ -321,31 +337,32 @@
 
             .about-thumb {
                 &-two {
-                    @include mq(max-lg){
+                    @include mq(max-lg) {
                         display: none;
                     }
                 }
             }
 
             .triangle-shape {
-                @include mq(max-lg){
+                @include mq(max-lg) {
                     display: none;
                 }
             }
 
             .circle-shape {
-                @include mq(max-lg){
+                @include mq(max-lg) {
                     display: none;
                 }
             }
         }
-        
+
         .thumb {
             max-width: 323px;
             border: 4px solid var(--color-white);
             box-shadow: 0px 30px 68px rgba(17, 21, 33, 0.18);
             border-radius: 20px;
         }
+
         .about-thumb {
             &-two {
                 position: absolute;
