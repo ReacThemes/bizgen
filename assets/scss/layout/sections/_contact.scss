@@ -8,7 +8,7 @@
     overflow: hidden;
     display: flex;
 
-    @include mq(max-lg){
+    @include mq(max-lg) {
         flex-wrap: wrap;
     }
 
@@ -16,12 +16,12 @@
         width: 60%;
         padding: 80px 50px 80px 80px;
 
-        @include mq(max-lg){
+        @include mq(max-lg) {
             width: 100%;
             padding: 50px;
         }
 
-        @include mq(max-md){
+        @include mq(max-md) {
             padding: 30px;
         }
 
@@ -36,14 +36,14 @@
         .title {
             margin-bottom: 45px;
 
-            @include mq(max-xl){
+            @include mq(max-xl) {
                 br {
                     display: none;
                 }
             }
 
-            @include mq(max-sm){
-                font-size: 30px;
+            @include mq(max-sm) {
+                font-size: 25px;
             }
         }
 
@@ -107,7 +107,7 @@
     .rts-maps-area {
         width: 40%;
 
-        @include mq(max-lg){
+        @include mq(max-lg) {
             height: 300px;
             width: 100%;
         }
@@ -128,6 +128,7 @@
         padding: 40px;
         background: var(--color-white);
         border-radius: 15px;
+        height: 100%;
 
         .icon {
             @include flex;
@@ -148,6 +149,13 @@
                 font-weight: var(--f-medium);
                 margin-bottom: 10px;
             }
+
+            h4 {
+                @include mq(max-xl) {
+                    font-size: 20px;
+                    line-height: 1.2;
+                }
+            }
         }
     }
 }
@@ -157,27 +165,30 @@
     &.contact-three {
         background: #F6F6F6;
     }
+
     .contact-wrapper {
-    
+
         .rts-contact-content-area {
             .rts-section-title {
                 .title {
                     line-height: 1.4;
                     margin-bottom: 20px
                 }
+
                 .desc {
                     margin-bottom: 35px;
                 }
             }
+
             .contact-info-wrapper {
                 .contact-info-item {
                     @include flex-center;
                     gap: 20px;
-    
+
                     &:not(:last-child) {
                         margin-bottom: 40px;
                     }
-    
+
                     .icon {
                         @include flex;
                         min-width: 70px;
@@ -187,6 +198,7 @@
                         border-radius: 50%;
                         font-size: 20px;
                     }
+
                     .content {
                         span {
                             display: inline-block;
@@ -199,31 +211,31 @@
                 }
             }
         }
-    
+
         .rts-contact-form-area {
             background: var(--color-white);
             padding: 50px;
             border-radius: 30px;
             box-shadow: 0px 4px 0px var(--color-primary);
-    
+
             @include mq(max-sm) {
                 padding: 30px;
             }
-    
+
             .title {
                 font-size: 30px;
                 margin-bottom: 35px;
             }
-    
+
             .contact-form {
                 .single-input-wrapper {
                     margin-bottom: 20px;
-    
+
                     .gcf {
                         --bs-gutter-x: 20px;
                         --bs-gutter-y: 20px;
                     }
-    
+
                     .single-input {
                         input {
                             width: 100%;
@@ -231,14 +243,14 @@
                             border: 1px solid #E3E3E4;
                             border-radius: 7px;
                             background: #FAFAFA;
-    
+
                             &:focus {
                                 border-color: var(--color-primary);
                             }
                         }
                     }
                 }
-    
+
                 .single-input-textarea {
                     textarea {
                         padding: 20px;
@@ -247,13 +259,13 @@
                         height: 120px;
                         width: 100%;
                         background: #FAFAFA;
-    
+
                         &:focus {
                             border-color: var(--color-primary);
                         }
                     }
                 }
-    
+
                 .rts-btn {
                     margin-top: 30px;
                     border-radius: 100px;

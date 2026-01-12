@@ -58,6 +58,10 @@
                 top: 50%;
                 transform: translateY(-50%);
                 left: -35px;
+
+                @include mq(max-sm){
+                    top: 26%;
+                }
             }
 
             .content {

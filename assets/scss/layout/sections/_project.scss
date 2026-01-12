@@ -181,7 +181,7 @@
                 font-size: 40px;
                 line-height: 1;
 
-                @include mq(max-sm){
+                @include mq(max-sm) {
                     font-size: 30px;
                 }
             }
@@ -271,7 +271,7 @@
                     transition: all 0.5s ease;
                     z-index: 3;
 
-                    @include mq(max-xxxl){
+                    @include mq(max-xxxl) {
                         padding: 20px;
                         left: 20px;
                         right: 20px;
@@ -283,7 +283,7 @@
                             font-size: 30px;
                             margin-bottom: 5px;
 
-                            @include mq(max-lg){
+                            @include mq(max-lg) {
                                 font-size: 20px;
                             }
                         }
@@ -365,15 +365,22 @@
                 border-bottom: none;
                 border-radius: 10px 10px 0 0;
 
+                @include mq(max-lg){
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+
                 .title {
                     font-size: 24px;
                 }
+
                 .social-area {
                     display: flex;
                     align-items: center;
                     gap: 14px;
 
-                   .title {
+                    .title {
                         font-size: 18px;
                         font-weight: 600;
                         margin: 0;
@@ -397,13 +404,35 @@
                 grid-template-columns: repeat(4, 1fr);
                 border: 1px solid #E4E4E8;
                 border-radius: 0 0 10px 10px;
+
+                @include mq(max-lg) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @include mq(max-md) {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+
                 .single-info {
                     @include flex;
                     gap: 20px;
-                    padding: 40px 10px;        
+                    padding: 40px 10px;
+
+                    @include mq(max-lg) {
+                        flex-direction: column;
+                        text-align: center;
+
+                    }
+
                     &:not(:last-child) {
                         border-right: 1px solid #E4E4E8;
-                    }     
+                        @include mq(max-lg){
+                            border-bottom: 1px solid #E4E4E8;
+                        }
+                        @include mq(max-md){
+                            border-right: none;
+                        }
+                    }
 
                     .icon {
                         width: 50px;
@@ -416,10 +445,12 @@
                         color: var(--color-primary);
                         flex-shrink: 0;
                     }
+
                     .content {
                         .meta {
                             color: var(--color-body-2);
                         }
+
                         .name {
                             font-size: 18px;
                             margin-top: 5px;
@@ -428,6 +459,7 @@
                 }
             }
         }
+
         .thumbnails {
             img {
                 border-radius: 15px;
@@ -439,12 +471,18 @@
                 .title {
                     margin-bottom: 20px
                 }
+
                 .challenge-wrapper {
                     margin-top: 35px;
+
                     .challenge-item {
                         @include flex-center;
                         gap: 20px;
-                        
+
+                        @include mq(max-md){
+                            flex-wrap: wrap;
+                        }
+
                         &:not(:last-child) {
                             margin-bottom: 30px;
                         }
@@ -457,6 +495,7 @@
                             color: var(--color-primary);
                             border-radius: 50%;
                         }
+
                         .content {
                             .title {
                                 font-size: 20px;
@@ -466,11 +505,14 @@
                     }
                 }
             }
+
             .challenge-thumb {
                 margin-left: 30px;
+
                 @include mq(max-xl) {
                     margin-left: 0;
                 }
+
                 img {
                     border-radius: 15px;
                 }

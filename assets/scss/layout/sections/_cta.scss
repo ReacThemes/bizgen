@@ -414,6 +414,12 @@
         .title {
             font-size: 30px;
             line-height: 40px;
+
+            @include mq(max-lg){
+                br {
+                    display: none;
+                }
+            }
         }
     }
 

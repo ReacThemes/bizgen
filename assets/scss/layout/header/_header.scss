@@ -261,7 +261,7 @@
 
                 .logo {
                     @include mq(max-xxl) {
-                        width: 120px;
+                        max-width: 120px;
                     }
                 }
 
@@ -395,7 +395,7 @@
                 }
 
                 @media(min-width:1200px) and (max-width:1400px) {
-                    width: 170px;
+                    max-width: 170px;
                 }
             }
         }
@@ -433,6 +433,9 @@
                 a {
                     color: var(--color-white);
                     font-weight: var(--f-semi-bold);
+                    i {
+                        margin-right: 5px
+                    }
                 }
             }
 
@@ -554,6 +557,14 @@
         background: var(--color-heading);
         @include flex-center;
         justify-content: space-between;
+
+        @include mq(max-xxxl){
+            padding: 0 60px;
+        }
+
+        @include mq(max-xxl){
+            padding: 0 40px;
+        }
 
         @include mq(max-xl) {
             display: none;
@@ -681,6 +692,14 @@
         @include flex-center;
         justify-content: space-between;
 
+        @include mq(max-xxxl){
+            padding: 0 60px;
+        }
+
+        @include mq(max-xxl){
+            padding: 0 40px;
+        }
+
         @include mq(max-xl) {
             padding: 20px 30px;
         }
@@ -693,15 +712,28 @@
             padding: 15px;
         }
 
+        .logo {
+            @include mq(max-xxl){
+                max-width: 150px;
+            }
+        }
+
         .rts-nav-btn-area {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 50px;
 
+            @include mq(max-xxl){
+                gap: 20px;
+            }
+
             .rts-nav-area {
                 ul {
                     li {
+                        @include mq(max-xxl) {
+                            margin-right: 20px;
+                        }
                         a {
                             color: var(--color-heading);
                             padding: 30px 0;
