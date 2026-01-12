@@ -2,16 +2,17 @@
 
   01. stickyHeader
   02. offcanvasActive
-  03. swiperActive
-  04. splitText
-  05. horizontalText
-  06. counterUp
-  07. magnificPopup
-  08. videoActivation
-  09. jarallaxInit
-  10. mesonaryTab
-  11. preloader
-  12. backToTopInit
+  03. searchModalActive
+  04. swiperActive
+  05. splitText
+  06. horizontalText
+  07. counterUp
+  08. magnificPopup
+  09. videoActivation
+  10. jarallaxInit
+  11. mesonaryTab
+  12. preloader
+  13. backToTopInit
 
 ==================================================*/
 
@@ -55,13 +56,11 @@
       });
     },
     offcanvasActive: function () {
-      // offcanvas open
       $(".menu-toggle").on("click", function (e) {
         e.preventDefault();
         $(".rts-offcanvas-area, .rts-offcanvas-overlay").addClass("active");
       });
 
-      // offcanvas close
       $(".offcanvas-close-btn, .rts-offcanvas-overlay").on(
         "click",
         function () {
@@ -71,7 +70,6 @@
         }
       );
 
-      // offcanvas menu clone
       var $offcanvasNav = $(".rts-offcanvas-menu nav");
 
       if (!$offcanvasNav.find("ul").length) {
@@ -84,14 +82,12 @@
         var $parent = $(this).parent();
         var $submenu = $parent.children(".submenu");
 
-        // close other open dropdowns
         $parent
           .siblings(".has-dropdown.active")
           .removeClass("active")
           .children(".submenu")
           .slideUp(300);
 
-        // toggle current
         if ($parent.hasClass("active")) {
           $parent.removeClass("active");
           $submenu.slideUp(300);
@@ -221,7 +217,7 @@
       });
       $(document).ready(function () {
         var swiper = new Swiper(".rts-project-active", {
-          slidesPerView: 1, // default mobile
+          slidesPerView: 1, 
           spaceBetween: 24,
           loop: true,
           speed: 1500,
@@ -285,7 +281,6 @@
         let animatedTextElements = document.querySelectorAll(".rts-slide-anim");
 
         animatedTextElements.forEach((element) => {
-          //Reset if needed
           if (element.animation) {
             element.animation.progress(1).kill();
             element.split.revert();
@@ -321,14 +316,14 @@
       const headings = document.querySelectorAll(".rts-horizontal-anim");
       if (!headings.length) return;
 
-      const DRIFT_FACTOR = 0.05; // slower, Bizgen-like feel
+      const DRIFT_FACTOR = 0.05; 
 
       headings.forEach((heading) => {
         const container = heading.parentElement;
-        let st; // store ScrollTrigger instance
+        let st; 
 
         function init() {
-          if (st) st.kill(); // prevent duplicate triggers
+          if (st) st.kill(); 
 
           const containerWidth = container.offsetWidth;
           const textWidth = heading.scrollWidth;
@@ -372,10 +367,10 @@
           },
           callbacks: {
             beforeOpen: function () {
-              $(".rts-offcanvas-overlay").removeClass("active"); // popup open হলে overlay hide
+              $(".rts-offcanvas-overlay").removeClass("active");
             },
             close: function () {
-              $(".rts-offcanvas-overlay").removeClass("active"); // popup close হলে overlay off
+              $(".rts-offcanvas-overlay").removeClass("active");
             },
           },
         });
