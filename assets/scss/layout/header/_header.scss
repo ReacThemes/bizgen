@@ -55,7 +55,7 @@
             @include flex;
             justify-content: space-between;
 
-            @include mq(max-sm) {
+            @include mq(max-md) {
                 justify-content: center
             }
 

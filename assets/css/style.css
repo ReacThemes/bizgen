@@ -8478,7 +8478,7 @@ button {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .rts-header-area .header-middle-area .header-middle-wrapper {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
