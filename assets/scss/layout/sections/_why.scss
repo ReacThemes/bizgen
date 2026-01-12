@@ -34,7 +34,11 @@
             z-index: 1;
 
             &:not(:last-child) {
-                margin-bottom: 20px
+                margin-bottom: 20px;
+
+            }
+            @include mq(max-sm){
+                margin-top: 60px;
             }
 
             &:nth-child(odd) {
@@ -46,6 +50,10 @@
                     left: 0;
                 }
                 margin-left: 40px
+            }
+
+            @include mq(max-sm){
+                margin-left: 0;
             }
 
             .icon {
@@ -60,7 +68,9 @@
                 left: -35px;
 
                 @include mq(max-sm){
-                    top: 26%;
+                    top: -35px;
+                    left: 50%;
+                    transform: translateX(-50%);
                 }
             }
 
@@ -70,6 +80,10 @@
                 border: 1px solid #EEEFFF;
                 box-shadow: 0px 10px 48px rgba(0, 0, 0, 0.08);
                 border-radius: 15px;
+
+                @include mq(max-sm){
+                    padding-top: 65px;
+                }
 
                 .title {
                     font-size: 20px;

@@ -115,6 +115,10 @@
             background: var(--color-heading);
             border-radius: 0 0 15px 15px;
 
+            @include mq(max-md) {
+                border-radius: 0;
+            }
+
             .menus {
                 padding: 0 20px;
                 width: 60px;
@@ -846,6 +850,23 @@
 
     .header-top-area {
         display: none;
+    }
+
+    .header-main-area {
+        @include mq(max-md) {
+            border-bottom: 1px solid #373739;
+
+        }
+
+        .header-main-wrapper {
+            border-bottom: 1px solid #373739;
+
+            @include mq(max-md) {
+                border-color: transparent;
+            }
+
+        }
+
     }
 
     &.header-three {
