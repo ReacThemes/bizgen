@@ -63,6 +63,10 @@
                 border: 1px solid #EBEBEC;
                 border-radius: 20px;
 
+                .title {
+                    font-size: 24px;
+                }
+
                 .desc {
                     text-align: center;
                     color: var(--color-heading);
@@ -75,6 +79,7 @@
                     padding: 40px;
 
                     .price {
+                        font-size: 48px;
                         margin-top: 15px;
                         margin-bottom: 30px;
                         padding-bottom: 35px;

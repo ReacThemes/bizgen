@@ -97,6 +97,7 @@
                 padding: 40px 35px;
 
                 .title {
+                    font-size: 24px;
                     @include rts-transition;
 
                     &:hover {
@@ -173,6 +174,7 @@
 
                 .content {
                     .title {
+                        font-size: 24px;
                         font-weight: var(--f-bold);
                         margin-bottom: 15px;
 
@@ -257,6 +259,7 @@
             .content {
                 .title {
                     margin-bottom: 15px;
+                    font-size: 24px;
                     @include rts-transition;
 
                     @include mq(max-xl) {
@@ -408,7 +411,8 @@
                 }
 
                 .content {
-                    h5 {
+                    .title {
+                        font-size: 20px;
                         margin-bottom: 10px;
                     }
                 }
@@ -501,6 +505,7 @@
             }
 
             .widget-title {
+                font-size: 24px;
                 margin-bottom: 30px;
             }
 
@@ -554,6 +559,7 @@
 
                             .content {
                                 .title {
+                                    font-size: 18px;
                                     color: var(--color-white);
                                 }
 

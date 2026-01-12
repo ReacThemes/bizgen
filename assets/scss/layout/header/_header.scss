@@ -6,6 +6,9 @@
     .header-top-area {
         background: var(--color-primary);
         padding: 10px 0;
+        @include mq(max-md){
+            display: none
+        }
 
         .header-top-wrapper {
             @include flex-center;
@@ -97,7 +100,7 @@
     }
 
     .header-main-area {
-        position: fixed;
+        position: absolute;
         width: 100%;
         z-index: 999;
 
@@ -112,13 +115,15 @@
             border-radius: 0 0 15px 15px;
 
             .menus {
-                margin: 0 22px;
-                width: 20px;
-                height: 100%;
+                padding: 0 20px;
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
                 display: flex;
                 flex-direction: column;
                 gap: 4px;
                 cursor: pointer;
+                justify-content: center;
 
                 @include mq(xl) {
                     display: none !important;
@@ -162,13 +167,15 @@
         }
 
         .menu-toggle {
-            margin: 0 22px;
-            width: 20px;
-            height: 100%;
+            padding: 0 20px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
             display: flex;
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
+            justify-content: center;
 
             @include mq(max-xl) {
                 display: none !important;
@@ -176,9 +183,10 @@
 
             span {
                 border-bottom: 2px solid var(--color-white);
+                width: 20px;
 
                 &:nth-child(1) {
-                    width: 70%;
+                    width: 14px;
                     margin-left: auto;
                 }
             }
@@ -750,6 +758,10 @@
     z-index: 99;
     animation: sticky 1s ease-in-out;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    .header-top-area {
+        display: none;
+    }
 
     &.header-three {
         background: var(--color-heading);

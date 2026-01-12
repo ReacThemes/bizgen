@@ -21,6 +21,10 @@
             padding: 50px;
         }
 
+        @include mq(max-md){
+            padding: 30px;
+        }
+
         .subtitle {
             display: inline-block;
             color: var(--color-primary);
@@ -36,6 +40,10 @@
                 br {
                     display: none;
                 }
+            }
+
+            @include mq(max-sm){
+                font-size: 30px;
             }
         }
 
