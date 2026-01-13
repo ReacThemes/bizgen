@@ -76,95 +76,63 @@
         }
       });
     },
-    // offcanvasActive: function () {
-    //   $(".menu-toggle").on("click", function (e) {
-    //     e.preventDefault();
-    //     $(".rts-offcanvas-area, .rts-offcanvas-overlay").addClass("active");
-    //   });
-
-    //   $(".offcanvas-close-btn, .rts-offcanvas-overlay").on(
-    //     "click",
-    //     function () {
-    //       $(".rts-offcanvas-area, .rts-offcanvas-overlay").removeClass(
-    //         "active"
-    //       );
-    //     }
-    //   );
-
-    //   var $offcanvasNav = $(".rts-offcanvas-menu nav");
-
-    //   if (!$offcanvasNav.find("ul").length) {
-    //     $(".main-nav-area > ul").clone(true).appendTo($offcanvasNav);
-    //   }
-
-    //   $offcanvasNav.find("li.has-dropdown > a").on("click", function (e) {
-    //     e.preventDefault();
-
-    //     var $parent = $(this).parent();
-    //     var $submenu = $parent.children(".submenu");
-
-    //     $parent
-    //       .siblings(".has-dropdown.active")
-    //       .removeClass("active")
-    //       .children(".submenu")
-    //       .slideUp(300);
-
-    //     if ($parent.hasClass("active")) {
-    //       $parent.removeClass("active");
-    //       $submenu.slideUp(300);
-    //     } else {
-    //       $parent.addClass("active");
-    //       $submenu.slideDown(300);
-    //     }
-    //   });
-    // },
     offcanvasActive: function () {
-  $(".menu-toggle").on("click", function (e) {
-    e.preventDefault();
-    $(".rts-offcanvas-area, .rts-offcanvas-overlay").addClass("active");
-  });
+      $(".menu-toggle").on("click", function (e) {
+        e.preventDefault();
+        $(".rts-offcanvas-area, .rts-offcanvas-overlay").addClass("active");
+      });
 
-  $(".offcanvas-close-btn, .rts-offcanvas-overlay").on("click", function () {
-    $(".rts-offcanvas-area, .rts-offcanvas-overlay").removeClass("active");
-  });
+      $(".offcanvas-close-btn, .rts-offcanvas-overlay").on(
+        "click",
+        function () {
+          $(".rts-offcanvas-area, .rts-offcanvas-overlay").removeClass(
+            "active"
+          );
+        }
+      );
 
-  var $offcanvasNav = $(".rts-offcanvas-menu nav");
+      var $offcanvasNav = $(".rts-offcanvas-menu nav");
 
-  if (!$offcanvasNav.find("ul").length) {
-    $(".main-nav-area > ul").clone(true).appendTo($offcanvasNav);
-  }
+      if (!$offcanvasNav.find("ul").length) {
+        $(".main-nav-area > ul").clone(true).appendTo($offcanvasNav);
+      }
 
-  // Dropdown toggle
-  $offcanvasNav.find("li.has-dropdown > a").on("click", function (e) {
-    e.preventDefault();
+      // Dropdown toggle
+      $offcanvasNav.find("li.has-dropdown > a").on("click", function (e) {
+        e.preventDefault();
 
-    var $parent = $(this).parent();
-    var $submenu = $parent.children(".submenu");
+        var $parent = $(this).parent();
+        var $submenu = $parent.children(".submenu");
 
-    $parent
-      .siblings(".has-dropdown.active")
-      .removeClass("active")
-      .children(".submenu")
-      .slideUp(300);
+        $parent
+          .siblings(".has-dropdown.active")
+          .removeClass("active")
+          .children(".submenu")
+          .slideUp(300);
 
-    if ($parent.hasClass("active")) {
-      $parent.removeClass("active");
-      $submenu.slideUp(300);
-    } else {
-      $parent.addClass("active");
-      $submenu.slideDown(300);
-    }
-  });
+        if ($parent.hasClass("active")) {
+          $parent.removeClass("active");
+          $submenu.slideUp(300);
+        } else {
+          $parent.addClass("active");
+          $submenu.slideDown(300);
+        }
+      });
 
-  // Close offcanvas on clicking any menu link that navigates
-  $offcanvasNav.find("a").on("click", function () {
-    var href = $(this).attr("href");
-    if (href && href !== "#" && !$(this).parent().hasClass("has-dropdown")) {
-      $(".rts-offcanvas-area, .rts-offcanvas-overlay").removeClass("active");
-    }
-  });
-}
-,
+      // Close offcanvas on clicking any menu link that navigates
+      $offcanvasNav.find("a").on("click", function () {
+        var href = $(this).attr("href");
+        if (
+          href &&
+          href !== "#" &&
+          !$(this).parent().hasClass("has-dropdown")
+        ) {
+          $(".rts-offcanvas-area, .rts-offcanvas-overlay").removeClass(
+            "active"
+          );
+        }
+      });
+    },
     searchModalActive: function () {
       $(document).on("click", ".search-icon", function (e) {
         e.preventDefault();
