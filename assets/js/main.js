@@ -33,7 +33,7 @@
     },
     methods: function (e) {
       rtsJs.stickyHeader();
-      // rtsJs.smoothScroll();
+      rtsJs.smoothScroll();
       rtsJs.offcanvasActive();
       rtsJs.searchModalActive();
       rtsJs.swiperActive();
@@ -59,19 +59,14 @@
       var $onepage = $(".onepage");
 
       if ($onepage.length === 0) {
-        return null; // onepage nai, kichu korbe na
+        return null;
       }
-
       $onepage.find('a[href^="#"]').on("click", function (event) {
-        var target = $($.attr(this, "href")); // scroll target
+        var target = $($.attr(this, "href"));
 
         if (target.length) {
-          // check if target exists
           event.preventDefault();
-
-          // optional offset, jodi fixed header thake
-          var offset = target.offset().top; // + header height if needed
-
+          var offset = target.offset().top;
           $("html, body").animate({ scrollTop: offset }, 300);
         }
       });
