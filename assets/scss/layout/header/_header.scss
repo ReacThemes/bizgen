@@ -126,7 +126,7 @@
             .left-area {
                 margin-left: 40px;
                 @include flex-center;
-                gap: 50px;
+                gap: 100px;
 
                 @include mq(max-xl) {
                     gap: 30px;
@@ -212,10 +212,19 @@
                     span {
                         border-bottom: 2px solid var(--color-white);
                         width: 20px;
+                        @include rts-transition;
 
                         &:nth-child(1) {
                             width: 14px;
                             margin-left: auto;
+                        }
+                    }
+
+                    &:hover {
+                        span {
+                            &:nth-child(1) {
+                                width: 20px;
+                            }
                         }
                     }
                 }
@@ -371,10 +380,19 @@
                                 span {
                                     border-bottom: 2px solid var(--color-heading);
                                     border-radius: 100px;
+                                    @include rts-transition;
 
                                     &:nth-child(1) {
                                         width: 70%;
                                         margin-left: auto;
+                                    }
+                                }
+
+                                &:hover {
+                                    span {
+                                        &:nth-child(1) {
+                                            width: 100%;
+                                        }
                                     }
                                 }
                             }
@@ -564,18 +582,39 @@
                 }
 
                 .menu-toggle {
-                    @include flex;
-                    width: 55px;
-                    height: 55px;
-                    color: var(--color-white);
+                    padding: 0 20px;
+                    width: 60px;
+                    height: 60px;
+                    line-height: 60px;
                     background: rgba(255, 255, 255, 0.07);
                     border: 1px solid rgba(255, 255, 255, 0.1);
                     border-radius: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 4px;
                     cursor: pointer;
                     @include rts-transition;
 
+                    span {
+                        border-bottom: 2px solid var(--color-white);
+                        border-radius: 100px;
+                        @include rts-transition;
+
+                        &:nth-child(1) {
+                            width: 70%;
+                            margin-left: auto;
+                        }
+                    }
+
                     &:hover {
                         background: var(--color-primary);
+
+                        span {
+                            &:nth-child(1) {
+                                width: 100%;
+                            }
+                        }
                     }
                 }
             }
@@ -911,11 +950,13 @@
             }
 
             .right-area {
+
                 .lang-switch,
-                .search-icon{
-                    padding: 25px 22px;
+                .search-icon {
+                    padding: 25px 25px;
                 }
-                .menu-toggle{
+
+                .menu-toggle {
                     height: 75px;
                 }
             }
