@@ -2,7 +2,6 @@
 /*    Nav Style                           */
 /*----------------------------------------*/
 
-
 .main-nav-area {
     ul {
         list-style: none;
@@ -26,39 +25,33 @@
                 @include rts-transition;
             }
 
-            &:hover>a {
+            &:hover > a {
                 color: var(--color-primary);
             }
 
-            /* ===== Dropdown Parent ===== */
-            &.has-dropdown {
-                >a {
-                    &::after {
-                        content: "\f078";
-                        /* chevron-down */
-                        font-family: "Font Awesome 6 Pro";
-                        font-weight: 400;
-                        font-size: 11px;
-                        margin-left: 6px;
-                        transition: transform 0.3s ease;
-                    }
-                }
+            /* ===== First Level Arrow ===== */
+            &.has-dropdown > a::after {
+                content: "\f078";
+                font-family: "Font Awesome 6 Pro";
+                font-size: 11px;
+                margin-left: 6px;
+                transition: transform 0.3s ease;
+            }
 
-                &:hover>a::after {
-                    transform: rotate(180deg);
-                }
+            &:hover > a::after {
+                transform: rotate(180deg);
             }
 
             /* ===== Submenu ===== */
             .submenu {
-                display: block;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 min-width: 220px;
                 background: var(--color-white);
-                transform: scaleY(0);   
-                transform-origin: top; 
+                display: block; 
+                transform: scaleY(0);
+                transform-origin: top;
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.3s ease;
@@ -67,6 +60,7 @@
                 z-index: 99;
 
                 li {
+                    width: 100%;
                     margin: 0;
 
                     &:not(:last-child) {
@@ -74,10 +68,13 @@
                     }
 
                     a {
-                        padding: 10px 20px;
-                        color: var(--color-heading);
-                        width: 100%;
+                        position: relative; 
                         display: block;
+                        width: 100%;
+                        padding: 10px 35px 10px 20px;
+                        color: var(--color-heading);
+                        font-weight: 600;
+                        text-transform: uppercase;
                         @include rts-transition;
 
                         &:hover {
@@ -85,10 +82,33 @@
                             background: #f7f7f7;
                         }
                     }
+
+                    /* ===== Nested Dropdown ===== */
+                    &.has-dropdown > a::after {
+                        content: "\f105";
+                        font-family: "Font Awesome 6 Pro";
+                        font-size: 14px;
+                        position: absolute;
+                        right: 15px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        transition: transform 0.3s ease;
+                    }
+
+                    &:hover > a::after {
+                        transform: translateY(-50%) rotate(90deg);
+                    }
+
+                    > .submenu {
+                        top: 0;
+                        left: 100%;
+                        transform-origin: left top;
+                        border-radius: 0 5px 5px 5px;
+                    }
                 }
             }
 
-            /* ===== Hover Effect ===== */
+            /* ===== Hover ===== */
             &:hover > .submenu {
                 opacity: 1;
                 visibility: visible;
