@@ -539,24 +539,4 @@
       }
     });
   });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const tabs = document.querySelectorAll('button[data-bs-toggle="tab"]');
-
-    tabs.forEach((tab) => {
-      tab.addEventListener("shown.bs.tab", function (e) {
-        const targetId = e.target.getAttribute("data-bs-target");
-        const targetTab = document.querySelector(targetId);
-
-        // আগের animation remove
-        targetTab.classList.remove("animate__animated", "animate__fadeInUp");
-
-        // animation reset
-        void targetTab.offsetWidth;
-
-        // নতুন করে animation যোগ
-        targetTab.classList.add("animate__animated", "animate__fadeInUp");
-      });
-    });
-  });
 })(jQuery, window);
