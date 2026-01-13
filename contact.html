@@ -227,30 +227,30 @@
                 <div class="rts-contact-wrapper">
                     <a href="#" class="subtitle">What's Going On</a>
                     <h3 class="title">You can connect with us <br> when need help!</h3>
-                    <form action="mailer.php" class="rts-contact-form">
+                    <form action="mailer.php" method="POST" class="rts-contact-form" id="contact-form">
                         <div class="rts-contact-input-wrapper">
                             <div class="row gci">
                                 <div class="col-md-6 col-sm-12">
                                     <div class="single-input">
-                                        <input type="text" name="name" placeholder="Your Name" required>
+                                        <input type="text" name="name" id="name" placeholder="Your Name" required>
                                         <span class="icon"><i class="fa-regular fa-user"></i></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <div class="single-input">
-                                        <input type="email" name="email" placeholder="Email Address" required>
+                                        <input type="email" name="email" id="email" placeholder="Email Address" required>
                                         <span class="icon"><i class="fa-regular fa-envelope"></i></span>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="single-input">
-                                        <input type="text" name="query" placeholder="Select Queary Topic" required>
+                                        <input type="text" name="query" id="query" placeholder="Select Queary Topic" required>
                                         <span class="icon"><i class="fa-regular fa-user"></i></span>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="single-input">
-                                        <textarea name="message" placeholder="Your Message" required></textarea>
+                                        <textarea name="message" id="message" placeholder="Your Message" required></textarea>
                                         <span class="icon"><i class="fa-regular fa-comments"></i></span>
                                     </div>
                                 </div>
