@@ -9,10 +9,9 @@
   07. counterUp
   08. magnificPopup
   09. videoActivation
-  10. jarallaxInit
-  11. mesonaryTab
-  12. preloader
-  13. backToTopInit
+  10. mesonaryTab
+  11. preloader
+  12. backToTopInit
 
 ==================================================*/
 
@@ -41,7 +40,6 @@
       rtsJs.counterUp();
       rtsJs.magnificPopup();
       rtsJs.videoActivation();
-      rtsJs.jarallaxInit();
       rtsJs.mesonaryTab();
       rtsJs.preloader();
       rtsJs.backToTopInit();
@@ -149,13 +147,9 @@
           loop: true,
           loopFillGroupWithBlank: true,
           effect: "fade",
-          pagination: {
-            el: ".swiper-pagination",
-            type: "fraction",
-          },
           navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-banner-next",
+            prevEl: ".swiper-banner-prev",
           },
           autoplay: {
             delay: 4000,
@@ -388,22 +382,6 @@
         });
       });
     },
-    jarallaxInit: function (e) {
-      $(document).ready(function () {
-        // Function to detect if the device is mobile
-        function isMobileDevice() {
-          return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent
-          );
-        }
-        // Initialize jarallax only if it's not a mobile device
-        if (!isMobileDevice()) {
-          $(".jarallax").jarallax();
-        } else {
-          console.log("Jarallax skipped on mobile devices");
-        }
-      });
-    },
     mesonaryTab: function () {
       $(window).on("load", function () {
         var isotope = $(".main-isotop");
@@ -513,10 +491,33 @@
       const bg = el.getAttribute("data-bg-src");
       if (bg) {
         el.style.backgroundImage = `url(${bg})`;
-        el.style.backgroundSize = "cover"; // Optional
-        el.style.backgroundPosition = "center"; // Optional
-        el.style.backgroundRepeat = "no-repeat"; // Optional
+        el.style.backgroundSize = "cover"; 
+        el.style.backgroundPosition = "center"; 
+        el.style.backgroundRepeat = "no-repeat"; 
       }
     });
   });
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const tabs = document.querySelectorAll('button[data-bs-toggle="tab"]');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('shown.bs.tab', function (e) {
+
+            const targetId = e.target.getAttribute('data-bs-target');
+            const targetTab = document.querySelector(targetId);
+
+            // আগের animation remove
+            targetTab.classList.remove('animate__animated', 'animate__fadeInUp');
+
+            // animation reset
+            void targetTab.offsetWidth;
+
+            // নতুন করে animation যোগ
+            targetTab.classList.add('animate__animated', 'animate__fadeInUp');
+        });
+    });
+
+});
 })(jQuery, window);
