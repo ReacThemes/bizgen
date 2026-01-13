@@ -162,10 +162,14 @@
           direction: "vertical",
           spaceBetween: 0,
           loop: true,
-          speed: 2500,
+          speed:2500,
           autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
+            delay: 4000,
+            disableOnInteraction: true,
+          },
+          navigation: {
+            nextEl: ".swiper-banner-next",
+            prevEl: ".swiper-banner-prev",
           },
         });
       });
@@ -211,7 +215,7 @@
       });
       $(document).ready(function () {
         var swiper = new Swiper(".rts-project-active", {
-          slidesPerView: 1, 
+          slidesPerView: 1,
           spaceBetween: 24,
           loop: true,
           speed: 1500,
@@ -310,14 +314,14 @@
       const headings = document.querySelectorAll(".rts-horizontal-anim");
       if (!headings.length) return;
 
-      const DRIFT_FACTOR = 0.05; 
+      const DRIFT_FACTOR = 0.05;
 
       headings.forEach((heading) => {
         const container = heading.parentElement;
-        let st; 
+        let st;
 
         function init() {
-          if (st) st.kill(); 
+          if (st) st.kill();
 
           const containerWidth = container.offsetWidth;
           const textWidth = heading.scrollWidth;
@@ -491,33 +495,30 @@
       const bg = el.getAttribute("data-bg-src");
       if (bg) {
         el.style.backgroundImage = `url(${bg})`;
-        el.style.backgroundSize = "cover"; 
-        el.style.backgroundPosition = "center"; 
-        el.style.backgroundRepeat = "no-repeat"; 
+        el.style.backgroundSize = "cover";
+        el.style.backgroundPosition = "center";
+        el.style.backgroundRepeat = "no-repeat";
       }
     });
   });
 
-document.addEventListener('DOMContentLoaded', function () {
-
+  document.addEventListener("DOMContentLoaded", function () {
     const tabs = document.querySelectorAll('button[data-bs-toggle="tab"]');
 
-    tabs.forEach(tab => {
-        tab.addEventListener('shown.bs.tab', function (e) {
+    tabs.forEach((tab) => {
+      tab.addEventListener("shown.bs.tab", function (e) {
+        const targetId = e.target.getAttribute("data-bs-target");
+        const targetTab = document.querySelector(targetId);
 
-            const targetId = e.target.getAttribute('data-bs-target');
-            const targetTab = document.querySelector(targetId);
+        // আগের animation remove
+        targetTab.classList.remove("animate__animated", "animate__fadeInUp");
 
-            // আগের animation remove
-            targetTab.classList.remove('animate__animated', 'animate__fadeInUp');
+        // animation reset
+        void targetTab.offsetWidth;
 
-            // animation reset
-            void targetTab.offsetWidth;
-
-            // নতুন করে animation যোগ
-            targetTab.classList.add('animate__animated', 'animate__fadeInUp');
-        });
+        // নতুন করে animation যোগ
+        targetTab.classList.add("animate__animated", "animate__fadeInUp");
+      });
     });
-
-});
+  });
 })(jQuery, window);

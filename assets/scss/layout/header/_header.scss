@@ -143,7 +143,7 @@
                         display: block
                     }
 
-                    @include mq(max-md){
+                    @include mq(max-md) {
                         max-width: 150px;
                     }
                 }
@@ -890,23 +890,33 @@
                 .logo-area {
                     display: block;
                 }
-            }
 
-            .rts-nav-area {
-                ul {
-                    li {
-                        a {
-                            padding: 25px 0;
-                        }
+                .rts-nav-area {
+                    ul {
+                        li {
+                            a {
+                                padding: 25px 0;
+                            }
 
-                        .submenu {
-                            li {
-                                a {
-                                    padding: 10px 20px;
+                            .submenu {
+                                li {
+                                    a {
+                                        padding: 10px 20px;
+                                    }
                                 }
                             }
                         }
                     }
+                }
+            }
+
+            .right-area {
+                .lang-switch,
+                .search-icon{
+                    padding: 25px 22px;
+                }
+                .menu-toggle{
+                    height: 75px;
                 }
             }
         }

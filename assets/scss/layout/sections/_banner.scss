@@ -211,7 +211,6 @@
     }
 }
 
-
 .rts-banner-area-two {
     position: relative;
     z-index: 1;
@@ -387,17 +386,17 @@
     }
 }
 
-
-
-
-
 .rts-banner-slider-three-area {
+    position: relative;
+    overflow: hidden;
+
     .banner-heading-text {
-        position: relative;
+        position: absolute;
         left: 0;
         right: 0;
-        bottom: 98px;
+        bottom: -65px;
         font-size: 300px;
+        line-height: 1;
         white-space: nowrap;
         font-weight: var(--f-bold);
         color: rgba(255, 255, 255, 0.05);
@@ -410,16 +409,13 @@
 
         @include mq(max-lg) {
             font-size: 150px;
+            bottom: -30px;
         }
 
         @include mq(max-md) {
             font-size: 100px;
+            bottom: -15px;
         }
-
-        @include mq(max-sm) {
-            font-size: 60px;
-        }
-
     }
 
     .rts-banner-slider-three {
@@ -433,6 +429,10 @@
             height: 700px;
         }
 
+        @include mq(max-md) {
+            height: 650px;
+        }
+
     }
 
     .swiper-slide {
@@ -443,21 +443,17 @@
     }
 
     .swiper-slide-active {
-
         .banner-content {
-
             .title {
                 animation: fadeInUp 1s ease forwards;
                 animation-delay: 0.3s;
             }
-
             .desc {
                 animation: fadeInUp 1s ease forwards;
                 animation-delay: 0.9s;
             }
 
             .banner-btn-area {
-
                 .banner-btn.one {
                     animation: fadeInLeft 1s ease forwards;
                     animation-delay: 1.5s;
@@ -476,7 +472,7 @@
             padding: 380px 0 260px;
 
             @include mq(max-xl) {
-                padding: 300px 0 200px;
+                padding: 300px 0 200px 100px;
             }
 
             @include mq(max-lg) {
@@ -492,6 +488,7 @@
                 color: var(--color-white);
                 line-height: 90px;
                 margin-bottom: 30px;
+                opacity: 0;
 
                 span {
                     position: relative;
@@ -528,6 +525,13 @@
             .desc {
                 color: var(--color-white);
                 font-weight: var(--f-medium);
+                opacity: 0;
+
+                @include mq(max-md) {
+                    br {
+                        display: none;
+                    }
+                }
             }
 
             .banner-btn-area {
@@ -559,12 +563,16 @@
                         background: var(--color-primary);
                         color: var(--color-white);
                     }
+                    &.one {
+                        opacity: 0;
+                    }
 
                     &.two {
                         background: transparent;
                         border: 1px solid var(--color-white);
                         color: var(--color-white);
                         @include rts-transition;
+                        opacity: 0;
 
                         &:hover {
                             background: var(--color-primary);
@@ -577,13 +585,63 @@
             }
         }
     }
+    .swiper-banner-btn {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 11%;
+        pointer-events: none;
+        z-index: 2;
 
-    .banner-content {
+        @include mq(max-xl) {
+            left: 3%;
+        }
 
-        .title,
-        .desc,
+        @include mq(max-lg) {
+            display: none;
+        }
+
         .banner-btn {
-            opacity: 0;
+            position: relative;
+            overflow: hidden;
+            pointer-events: all;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease;
+
+            i {
+                font-size: 24px;
+                color: var(--color-white);
+                z-index: 2;
+                position: relative;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image: url('../images/banner/bg-7.webp');
+                background-size: cover;
+                background-position: center;
+                opacity: 0;
+                transition: opacity 1s ease;
+                z-index: 1;
+                background-blend-mode: lighten;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
         }
     }
 }
