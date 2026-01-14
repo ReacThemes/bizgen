@@ -67,7 +67,7 @@
         if (target.length) {
           event.preventDefault();
           var offset = target.offset().top;
-          $("html, body").animate({ scrollTop: offset }, 300);
+          $("html, body").animate({ scrollTop: offset }, 500);
         }
       });
     },
@@ -398,10 +398,14 @@
           },
           callbacks: {
             beforeOpen: function () {
-              $(".rts-offcanvas-overlay").removeClass("active");
+              $(".rts-offcanvas-area, .rts-offcanvas-overlay").removeClass(
+                "active"
+              );
             },
             close: function () {
-              $(".rts-offcanvas-overlay").removeClass("active");
+              $(".rts-offcanvas-area, .rts-offcanvas-overlay").removeClass(
+                "active"
+              );
             },
           },
         });
