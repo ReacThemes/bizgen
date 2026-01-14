@@ -18,9 +18,8 @@
 
 (function ($) {
   "use strict";
-  let device_width = window.innerWidth;
 
-  var rtsJs = {
+  const rtsJs = {
     m: function (e) {
       rtsJs.d();
       rtsJs.methods();

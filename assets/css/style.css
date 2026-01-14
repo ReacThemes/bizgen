@@ -8051,6 +8051,9 @@ button {
             transform: rotate(360deg);
   }
 }
+/*----------------------------------------*/
+/*    common style                        */
+/*----------------------------------------*/
 .bg-black {
   background: var(--color-heading) !important;
 }
@@ -12619,6 +12622,9 @@ button {
   color: var(--color-primary);
 }
 
+/*----------------------------------------*/
+/*   Brand Section                         */
+/*----------------------------------------*/
 .rts-brand-area {
   margin: 30px 30px 0 30px;
   border-radius: 20px;
