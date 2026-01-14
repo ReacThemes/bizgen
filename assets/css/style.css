@@ -13052,6 +13052,9 @@ button {
 .rts-team-area-two .rts-team-wrapper-two .sing-item-wrapper .single-item {
   text-align: center;
 }
+.rts-team-area-two .rts-team-wrapper-two .sing-item-wrapper .single-item .team-thumb img {
+  border-radius: 50%;
+}
 .rts-team-area-two .rts-team-wrapper-two .sing-item-wrapper .single-item .content {
   margin-top: 35px;
 }
