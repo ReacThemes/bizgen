@@ -251,7 +251,10 @@
         }
     }
 }
-
+.about-three {
+    position: relative;
+    z-index: 2;
+}
 .rts-about-wrapper-three {
     .rts-about-content-area {
         .rts-section-title {
