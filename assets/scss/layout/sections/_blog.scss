@@ -32,7 +32,8 @@
             @include mq(max-lg) {
                 flex-wrap: wrap;
             }
-            @media(min-width:768px) and (max-width:991px){
+
+            @media(min-width:768px) and (max-width:991px) {
                 gap: 10px;
             }
 
@@ -55,8 +56,8 @@
                 line-height: 1.2;
             }
 
-            @include mq(max-sm){
-                font-size: 20px;
+            @include mq(max-sm) {
+                font-size: 17px;
                 line-height: 1.2;
             }
 
@@ -107,11 +108,11 @@
                     padding-bottom: 18px;
                     margin-bottom: 15px;
 
-                    @include mq(max-lg){
+                    @include mq(max-lg) {
                         flex-wrap: wrap;
                         gap: 10px;
                     }
-                    
+
                 }
 
                 .title {
@@ -153,6 +154,7 @@
             box-shadow: 0px 9px 48px rgba(225, 230, 239, 0.53);
             border-radius: 12px;
             border-color: transparent;
+            height: 100%;
 
             .blog-thumb {
                 padding: 15px 15px 0 15px;
@@ -194,6 +196,16 @@
                 .title {
                     font-size: 22px;
                     line-height: 30px;
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 19px;
+                        line-height: 1.2;
+                    }
+
+                    @include mq(max-lg) {
+                        font-size: 17px;
+                        line-height: 24px;
+                    }
                 }
             }
 
@@ -202,6 +214,7 @@
                     .ct {
                         background: var(--color-heading);
                     }
+
                     img {
                         transform: scale(1);
                     }
@@ -293,6 +306,7 @@
                 }
             }
         }
+
         &:hover {
             .blog-thumb {
                 img {
@@ -478,7 +492,7 @@
                 gap: 20px;
 
                 @include mq(max-sm) {
-                   flex-wrap: wrap;
+                    flex-wrap: wrap;
                 }
 
                 &:not(:last-child) {
@@ -639,11 +653,13 @@
             .single-image {
                 overflow: hidden;
                 border-radius: 10px;
+
                 img {
                     display: block;
                     width: 100%;
                     height: 100%;
                     @include rts-transition;
+
                     &:hover {
                         transform: scale(1.1);
                     }
@@ -682,7 +698,7 @@
                 justify-content: space-between;
                 margin: 40px 0 45px;
 
-                @include mq(max-xl){
+                @include mq(max-xl) {
                     flex-wrap: wrap;
                     gap: 20px;
                 }
@@ -701,7 +717,7 @@
                         display: flex;
                         gap: 10px;
 
-                        @include mq(max-sm){
+                        @include mq(max-sm) {
                             flex-wrap: wrap;
                             row-gap: 20px;
                         }
@@ -729,7 +745,7 @@
                     align-items: center;
                     gap: 20px;
 
-                    @include mq(max-sm){
+                    @include mq(max-sm) {
                         flex-wrap: wrap;
                     }
 
@@ -770,7 +786,7 @@
                 border-top: 1px solid #E6E9F0;
                 border-bottom: 1px solid #E6E9F0;
 
-                @include mq(max-md){
+                @include mq(max-md) {
                     flex-wrap: wrap;
                 }
 
