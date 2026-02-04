@@ -12232,6 +12232,11 @@ button {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .rts-service-area .rts-service-wrapper .service-item .service-content-area .title {
+    font-size: 20px;
+  }
+}
 .rts-service-area .rts-service-wrapper .service-item .service-content-area .title:hover {
   color: var(--color-primary);
 }
@@ -12380,7 +12385,7 @@ button {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
-@media (max-width: 1199px) {
+@media (max-width: 1399px) {
   .rts-service-area .rts-service-wrapper-three .single-item .content .title {
     font-size: 19px;
   }
@@ -13771,6 +13776,12 @@ button {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .rts-blog-wrapper .single-blog .title {
+    font-size: 19px;
+    line-height: 1.2;
+  }
+}
 @media (max-width: 575px) {
   .rts-blog-wrapper .single-blog .title {
     font-size: 20px;
@@ -13905,6 +13916,7 @@ button {
   overflow: hidden;
   border: 1px solid #E3E8F5;
   border-radius: 15px;
+  height: 100%;
 }
 .rts-blog-wrapper-three .single-blog .blog-thumb {
   border-radius: 15px 15px 0 0;
@@ -14699,6 +14711,11 @@ button {
   font-size: 24px;
   color: var(--color-white);
   line-height: 32px;
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .rts-project-area .rts-project-wrapper .single-item .content .title {
+    font-size: 19px;
+  }
 }
 @media (max-width: 1199px) {
   .rts-project-area .rts-project-wrapper .single-item .content .title {
@@ -16510,6 +16527,16 @@ button {
   margin-left: 7px;
 }
 
+@media (max-width: 1800px) {
+  [dir=rtl] .rts-banner-slider-area .rts-banner-pagination {
+    right: 109px;
+  }
+}
+@media (max-width: 1660px) {
+  [dir=rtl] .rts-banner-slider-area .rts-banner-pagination {
+    right: 60px;
+  }
+}
 @media (max-width: 1600px) {
   [dir=rtl] .rts-header-area.header-three .top-header-area {
     padding: 15px 40px 15px 100px;
@@ -16520,6 +16547,13 @@ button {
   [dir=rtl] .rts-header-area.header-three .bottom-header-area {
     padding: 0 40px 0 100px;
   }
+}
+@media (max-width: 1530px) {
+  [dir=rtl] .rts-banner-slider-area .rts-banner-pagination {
+    right: 45px;
+  }
+}
+@media (min-width: 1400px) and (max-width: 1500px) {
   [dir=rtl] .rts-banner-slider-area .rts-banner-pagination {
     right: 3px;
   }

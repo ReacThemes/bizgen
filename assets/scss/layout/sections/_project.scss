@@ -61,6 +61,10 @@
                     color: var(--color-white);
                     line-height: 32px;
 
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 19px;
+                    }
+
                     @include mq(max-xl) {
                         font-size: 22px;
                     }
