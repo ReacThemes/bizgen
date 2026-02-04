@@ -75,3 +75,47 @@
   position: sticky;
   top: 120px;
 }
+
+
+
+// rts ltr css
+.rtl-ltr-switcher-btn {
+    position: fixed;
+    right: 0;
+    top: 55%;
+    left: auto;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding: 25px 6px;
+    background: var(--color-primary);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    z-index: 1000;
+    color: #fff;
+    cursor: pointer;
+
+    .ltr,
+    .rtl {
+        display: none;
+        font-weight: 500;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+}

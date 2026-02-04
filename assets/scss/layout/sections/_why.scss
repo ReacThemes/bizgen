@@ -16,6 +16,12 @@
             gap: 20px;
             margin: 35px 0 45px;
 
+            img {
+                @include mq(max-xl) {
+                    width: 160px;
+                }
+            }
+
             @include mq(max-sm){
                 flex-wrap: wrap;
             }
@@ -24,11 +30,21 @@
                 font-size: 18px;
                 font-weight: var(--f-semi-bold);
                 color: var(--color-heading);
+
+                 @include mq(max-xl) {
+                    font-size: 16px;
+                } 
             }
         }
     }
 
     .why-choose-item-wrapper {
+        padding-left: 100px;
+
+        @include mq(max-xl) {
+            padding-left: 0;
+        }
+
         .why-choose-item {
             position: relative;
             z-index: 1;

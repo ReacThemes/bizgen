@@ -171,17 +171,24 @@
             padding-left: 50px;
             border-left: 1px solid #E4E4E4;
 
-            @include mq(max-xl) {
-                flex-basis: 45%;
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                padding-left: 30px;
             }
 
-            @include mq(max-lg) {
-                // padding: 0 15px;
+            @include mq(max-xl) {
+                flex-basis: 45%;
+
+                &:nth-child(3) {
+                    border-left: none;
+                    padding-left: 0;
+                }
             }
 
             @include mq(max-md) {
                 flex-basis: 100%;
                 padding-left: 25px;
+                border-left: 0;
+                padding-left: 0;
             }
 
             .widget-title {
@@ -531,14 +538,14 @@
             justify-content: space-between;
             border-bottom: 1px solid #3D3E40;
             padding-bottom: 50px;
-            
-            @include mq(max-lg){
+
+            @include mq(max-lg) {
                 justify-content: center;
                 flex-wrap: wrap;
                 gap: 15px;
             }
 
-            @include mq(max-md){
+            @include mq(max-md) {
                 gap: 10px;
             }
 

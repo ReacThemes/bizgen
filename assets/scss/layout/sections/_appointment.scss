@@ -17,8 +17,8 @@
                 margin-bottom: 25px !important;
 
                 @include mq(max-sm) {
-                    font-size: 35px;
-                    line-height: 40px;
+                    font-size: 30px;
+                    line-height: 35px;
                 }
             }
         }
@@ -29,6 +29,10 @@
             .single-item {
                 @include flex-center;
                 gap: 25px;
+
+                @include mq(max-sm) {
+                    flex-wrap: wrap;
+                }
 
                 &:not(:last-child) {
                     margin-bottom: 30px;
@@ -69,6 +73,10 @@
         .title {
             font-size: 30px;
             margin-bottom: 35px;
+
+            @include mq(max-sm) {
+                font-size: 25px;
+            }
         }
 
         .contact-form {

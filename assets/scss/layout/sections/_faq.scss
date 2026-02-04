@@ -22,7 +22,7 @@
         .rts-faq-content-area {
             margin-right: 50px;
 
-            @include mq(max-lg) {
+            @include mq(max-xl) {
                 margin-right: 0;
             }
 

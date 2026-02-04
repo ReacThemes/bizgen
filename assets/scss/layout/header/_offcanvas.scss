@@ -3,20 +3,19 @@
     z-index: 9999;
     width: 100%;
     max-width: 400px;
-    right: 0;
+    right: -100%;
     top: 0;
     height: 100%;
     background: #ffffff;
     padding: 46px 30px 50px 30px;
     font-size: 1.15em;
-    transform: translate3d(400px, 0, 0);
-    transition: transform 0.4s cubic-bezier(.7, 0, .3, 1);
+    transition: all 0.3s ease;
     overflow-y: auto;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
     display: block;
 
     &.active {
-        transform: translate3d(0, 0, 0);
+        right: 0;
     }
 
     .offcanvas-top-area {

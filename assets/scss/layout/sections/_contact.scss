@@ -172,7 +172,14 @@
             .rts-section-title {
                 .title {
                     line-height: 1.4;
-                    margin-bottom: 20px
+                    margin-bottom: 20px;
+
+                    @include mq(max-xl) {
+                        line-height: 1.2;
+                        br {
+                            display: none;
+                        }
+                    }
                 }
 
                 .desc {

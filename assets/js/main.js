@@ -44,6 +44,7 @@
       rtsJs.mesonaryTab();
       rtsJs.preloader();
       rtsJs.backToTopInit();
+      rtsJs.rtlToggle();
     },
     stickyHeader: function (e) {
       $(window).scroll(function () {
@@ -522,6 +523,38 @@
         $("html, body").animate({ scrollTop: 0 }, 1500);
       });
     },
+    rtlToggle: function () {
+      $(document).ready(function () {
+        // Retrieve the saved direction from localStorage
+        const savedDir = localStorage.getItem("pageDirection") || "ltr"; // Default to "ltr"
+        $("body").attr("dir", savedDir);
+
+        // Update button visibility based on saved direction
+        if (savedDir === "rtl") {
+          $(".rtl").removeClass("show");
+          $(".ltr").addClass("show");
+        } else {
+          $(".rtl").addClass("show");
+          $(".ltr").removeClass("show");
+        }
+
+        // Toggle direction and save state on button click
+        $(".rtl-ltr-switcher-btn").on("click", function () {
+          const currentDir = $("body").attr("dir");
+          const newDir = currentDir === "rtl" ? "ltr" : "rtl";
+
+          // Update body direction
+          $("body").attr("dir", newDir);
+
+          // Toggle button visibility
+          $(".rtl").toggleClass("show");
+          $(".ltr").toggleClass("show");
+
+          // Save the new direction in localStorage
+          localStorage.setItem("pageDirection", newDir);
+        });
+      });
+    }
   };
 
   rtsJs.m();

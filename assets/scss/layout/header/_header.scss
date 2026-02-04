@@ -67,6 +67,10 @@
                 @include flex-center;
                 gap: 80px;
 
+                @include mq(max-xxl) {
+                    gap: 30px;
+                }
+
                 .info-wrapper {
                     @include flex-center;
                     gap: 60px;
@@ -511,7 +515,7 @@
             justify-content: space-between;
 
             @include mq(max-xxxl) {
-                padding: 0 100px 0 0;
+                padding: 0 100px 0 40px;
             }
 
             @include mq(max-xxl) {
