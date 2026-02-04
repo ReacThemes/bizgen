@@ -403,4 +403,8 @@
     .rts-blog-sidebar-wrapper .single-widget .category-list li a i {
         transform: scaleX(-1);
     }
+    .rts-blog-details-area .rts-blog-details-wrapper .inner-content-blog-details .details-list li i {
+        margin-right: unset;
+        margin-left: 7px;
+    }
 }
